@@ -102,4 +102,6 @@ The Release solution build was verified with .NET SDK `10.0.401`, existing resto
 
 Package creation and automatic configuration loading were verified using a fresh consuming project restored from a local NuGet feed. MSBuild registered the packaged global configuration, and `dotnet format whitespace` applied its same-line brace style without a manual config import or local style settings.
 
-There are currently no automated test projects in the solution. The custom rules' code fixes were not exercised in this configuration-loading check.
+Both custom rules were also verified in a separate consuming solution referencing the packed NuGet package. Before formatting, its build reported `CT0001` for separated closing delimiters and `CT0002` for both a short multiline call and a long single-line call. Running plain `dotnet format` joined the closing delimiters, collapsed the short call, and applied hanging alignment to the long call. A second run with `--verify-no-changes` passed, and a full rebuild of the consumer completed with zero warnings or errors.
+
+There are currently no automated test projects in the solution; these results come from integration smoke checks.
