@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CT.CodeStyle.Analyzers/CT.CodeStyle.Analyzers.csproj" />
+  <Project Path="CT.CodeStyle.CodeFixes/CT.CodeStyle.CodeFixes.csproj" />
+  <Project Path="CT.CodeStyle.Package/CT.CodeStyle.Package.csproj" />
+</Solution>

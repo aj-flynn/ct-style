@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+
+    <PackageId>CT.CodeStyle</PackageId>
+    <Version>1.0.3</Version>
+    <Authors>CT</Authors>
+    <Description>CT code style analyzers and code fixes.</Description>
+
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference
+        Include="..\CT.CodeStyle.Analyzers\CT.CodeStyle.Analyzers.csproj"
+        ReferenceOutputAssembly="false"
+        PrivateAssets="all" />
+
+    <ProjectReference
+        Include="..\CT.CodeStyle.CodeFixes\CT.CodeStyle.CodeFixes.csproj"
+        ReferenceOutputAssembly="false"
+        PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None
+        Include="..\CT.CodeStyle.Analyzers\bin\$(Configuration)\netstandard2.0\CT.CodeStyle.Analyzers.dll"
+        Pack="true"
+        PackagePath="analyzers\dotnet\cs" />
+
+    <None
+        Include="..\CT.CodeStyle.CodeFixes\bin\$(Configuration)\netstandard2.0\CT.CodeStyle.CodeFixes.dll"
+        Pack="true"
+        PackagePath="analyzers\dotnet\cs" />
+
+    <None
+        Include="CT.CodeStyle.globalconfig"
+        Pack="true"
+        PackagePath="config" />
+
+    <None
+        Include="CT.CodeStyle.props"
+        Pack="true"
+        PackagePath="buildTransitive" />
+  </ItemGroup>
+
+</Project>

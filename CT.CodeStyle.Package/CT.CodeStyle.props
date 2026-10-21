@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup>
+    <GlobalAnalyzerConfigFiles
+      Include="$(MSBuildThisFileDirectory)../config/CT.CodeStyle.globalconfig" />
+  </ItemGroup>
+</Project>
